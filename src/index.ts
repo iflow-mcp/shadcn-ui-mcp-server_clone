@@ -673,7 +673,7 @@ class ShadcnUiServer {
 
   async run() {
     const PORT = process.argv.slice(2)[0] || 8888;
-    const SSE = process.argv.slice(2)[1] || true;
+    const SSE = process.argv.slice(2)[1] === 'sse';
     try {
       if (!SSE) {
         const transport = new StdioServerTransport();
